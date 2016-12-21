@@ -1,13 +1,11 @@
 cmake_minimum_required(VERSION 3.4.0)
 
-option(USE_OPENMP      "Set to ON to build use openmp"  ON)
+option(USE_OPENMP "Set to ON to build use openmp"  ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
 
-# root folder
+# get NDK ROOT dir from ENV, these should be already exported to system environment
 set(ARTOOLKIT_ROOT $ENV{ARTOOLKIT_ROOT})
 set(NDK_ROOT $ENV{NDK_ROOT})
-#set(ARTOOLKIT_ROOT F:/Vision/ARToolKit5-bin-5.3.2-Android)
-#set(NDK_ROOT E:/Android/sdk/ndk-bundle)
 
 include_directories(src/main/jni)
 include_directories(${ARTOOLKIT_ROOT}/include)
@@ -42,7 +40,7 @@ add_library(
              ${src_files}
              )
 
-			 
+# cpufeatures library
 add_library(
             cpufeature
             SHARED
