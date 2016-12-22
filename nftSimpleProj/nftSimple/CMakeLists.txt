@@ -15,7 +15,7 @@ include_directories(${ARTOOLKIT_ROOT}/include/android)
 include_directories(${ARTOOLKIT_ROOT}/android/jni/curl/include)
 add_library(curl STATIC IMPORTED)
 set_target_properties(curl PROPERTIES
-    IMPORTED_LOCATION F:/Vision/ARToolKit5-bin-5.3.2-Android/android/jni/curl/libs/${ANDROID_ABI}/libcurl.a)
+    IMPORTED_LOCATION ${ARTOOLKIT_ROOT}/android/jni/curl/libs/${ANDROID_ABI}/libcurl.a)
 
 # add static libraries
 set(STATIC_LIBS ar2 kpm util eden argsub_es armulti ar aricp jpeg arvideo)
